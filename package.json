@@ -1,0 +1,27 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "Project Euler Challenges Solved in Javascript",
+  "main": "Problem1-MultiplesOf3And5.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serdg0/Project-Euler.git"
+  },
+  "keywords": [
+    "Euler"
+  ],
+  "author": "Sergio Diaz Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serdg0/Project-Euler/issues"
+  },
+  "homepage": "https://github.com/serdg0/Project-Euler#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.9.0",
+    "jest": "^25.4.0"
+  },
+  "dependencies": {}
+}
