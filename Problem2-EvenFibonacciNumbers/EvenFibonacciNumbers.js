@@ -1,22 +1,14 @@
 function fiboEvenSum(n) {
-  let seq = [1, 2];
-  let evens = [2];
-  let l = seq.length;
-  let next = seq[l-1] + seq[l-2];
+  let fiboSeq = [1, 2];
+  let i = 3;
 
-  while (next < n) {
-    next = seq[l-1] + seq[l-2];
-    seq.push(next);
-
-    if (next%2 === 0) {
-      evens.push(next);
-    }
-
-    l = seq.length
+  while (i < n) {
+    const next = fiboSeq[fiboSeq.length - 1] + fiboSeq[fiboSeq.length - 2];
+    fiboSeq.push(next);
+    i = next;
   }
-
-  console.log(evens)
-  evens.reduce((acc, val) => acc + val)
+  fiboSeq.pop()
+  return fiboSeq.filter(n => n%2 === 0).reduce((acc, val) => acc + val);
   }
 
 export default fiboEvenSum;
