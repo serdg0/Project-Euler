@@ -1,19 +1,26 @@
 function isPalindrome(n) {
-    n.toString().split('')
-  }
-  
-  function largestPalindromeProduct(n) {
-    // set low and high
-    let low = parseInt('1' + '0'.repeat(n-1));
-    let high = parseInt('9'.repeat(n));
-  
-    while (high >= low) {
-      
-      high -= 1
+  const s = n.toString();
+  return s.split("").reverse().join("") === s;
+}
+
+function largestPalindromeProduct(n) {
+  // set low and high
+  let low = parseInt('1' + '0'.repeat(n-1));
+  let high = parseInt('9'.repeat(n));
+  let max = 0;
+  while (high >= low) {
+    let pivot = high;
+
+    while (pivot != low) {
+      if (isPalindrome(pivot*high) && pivot*high > max) {
+        max = pivot*high
+      }
+      pivot -= 1;
     }
-  
-    console.log(isPalindrome())
-    return true;
+
+    high -= 1
   }
+return max
+}
 
 export default largestPalindromeProduct;
