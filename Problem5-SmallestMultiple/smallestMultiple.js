@@ -1,23 +1,29 @@
-const yeah = (i, arr) => {
-    const divisible = x => i%x === 0;
-    return arr.every(divisible)
+const myArray = n => {
+  let result = [];
+  let i = 2;
+
+  while (i <= n) {
+    result.push(i);
+    i += 1;
   }
-  
-  const arrayize = n => {
-    let i = 1;
-    let arr = []
-    while (i <= 0) {
-      arr.push(i)
-      i+=1
-    }
-    return arr;
+
+  return result
+}
+
+const dividesAll = array => {
+
+  return function(n) {
+    let isDivisible = curr => n%curr === 0;
+    return array.every(isDivisible);
   }
+
+}
   
   function smallestMult(n) {
     let i = 1;
-    let arr = arrayize(n);
+    let arr = myArray(n);
     //wrap i to return true or false
-    while (yeah(i, arr)) {
+    while (dividesAll(arr)(n)) {
       i+=1
     }
   }
