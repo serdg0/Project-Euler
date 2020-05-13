@@ -20,12 +20,14 @@ const dividesAll = array => {
 }
   
   function smallestMult(n) {
-    let i = 1;
+    let i = n + 1;
     let arr = myArray(n);
     //wrap i to return true or false
-    while (dividesAll(arr)(n)) {
+    while (!dividesAll(arr)(n)) {
       i+=1
     }
+
+    return i;
   }
 
   export default smallestMult;
